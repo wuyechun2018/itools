@@ -2,6 +2,15 @@ package itools.utils;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * HelloWorld 
+ * @desc: The beginning of this tools
+ * @author: wyc
+ * @createTime: 2016年10月24日 上午8:51:10
+ * @history:
+ * @version: v1.0
+ */
 public class HelloWorld {
 	/**
 	 * 
