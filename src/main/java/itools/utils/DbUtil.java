@@ -34,9 +34,14 @@ public class DbUtil {
 	 * @return int
 	 */
 	public static String doQuery(String sql) {
-		String url = "jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.16.7.116)(PORT=1521))(LOAD_BALANCE=yes)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=center)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))";
-		String user = "center";
-		String password = "123456";
+		//String url = "jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.16.7.116)(PORT=1521))(LOAD_BALANCE=yes)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=center)(FAILOVER_MODE=(TYPE=SELECT)(METHOD=BASIC)(RETRIES=180)(DELAY=5))))";
+		//String user = "center";
+		//String password = "123456";
+		
+		//改为从配置文件database.properties中获取
+		String url=PropertyConfig.getProp("database","url");
+		String user=PropertyConfig.getProp("database","user");
+		String password=PropertyConfig.getProp("database","password");
 
 		String count = "";
 		try {

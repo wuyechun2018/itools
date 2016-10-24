@@ -2,6 +2,7 @@ package itools.utils;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.MessageFormat;
 import java.util.Properties;
 /**
  * 
@@ -35,5 +36,32 @@ public class PropertyConfig {
 		}
 		
 	}
+	
+
+	/**
+	 * 
+	 * 从指定的Property文件中读取配置项
+	 * @author: wyc
+	 * @createTime: 2016年10月24日 下午5:41:15
+	 * @history:
+	 * @param propFileName
+	 * @param key
+	 * @return String
+	 */
+	public static String getProp(String propFileName,String key){
+		String value="";
+		try {
+			String file=MessageFormat.format("/config/test/{0}.properties",propFileName);
+			InputStream input = PropertyConfig.class.getResourceAsStream(file);
+			Properties prop=new Properties();
+			prop.load(input);
+			value=prop.getProperty(key);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return value;
+	}
+	
+	
 
 }
