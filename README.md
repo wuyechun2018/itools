@@ -1,5 +1,9 @@
-1、20161021-V1 Become a Maven web project;   
-1、20161021-V1  成为一个Maven构建的Web项目; 
+版本：
+1、20161021-V0.1 Become a Maven web project;    
+2、20161022-V0.2 Become a SpringMVC project; 
+3、20161023-V0.3 Add Jquery EasyUI; 
+3、20161024-V0.4 Add Echarts; 
+
 
 
 
