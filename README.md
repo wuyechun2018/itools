@@ -21,3 +21,7 @@ Could not write file：... ...
       <param-value>true</param-value>  
 </init-param>  
 true改为false;
+
+2、返回Json数据错误   
+ No converter found for return value of type: class itools.model.User  
+ 

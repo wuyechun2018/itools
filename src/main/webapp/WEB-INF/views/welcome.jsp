@@ -11,6 +11,8 @@
 <h2>Welcome to itools!</h2>
 
 <div>
+<div><a href="${ctx }/getJsonData">Get Json Data</a></div>
+<div><a href="${ctx }/getListJson">Get Json Data List</a></div>
 <div><a href="${ctx }/views/easyui/index">GO TO EasyUi</a></div>
 <div><a href="${ctx }/views/echarts/index">GO TO ECHARTS</a></div>
 </div>
