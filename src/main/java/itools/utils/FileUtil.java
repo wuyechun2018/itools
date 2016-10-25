@@ -25,18 +25,24 @@ import java.util.Scanner;
  */
 public class FileUtil {
 
+	/**
+	 * 
+	 * 从控制台读入数据,写入txt
+	 * @author: wyc
+	 * @createTime: 2016年10月25日 上午8:36:48
+	 * @history:
+	 * @param args void
+	 */
 	public static void main(String[] args) {
 		String filePath = "E:\\git-open\\git-project\\itools\\src\\main\\resources\\config\\test\\hello.txt";
 		//readFile(filePath);
 		//writeText(filePath,"HelloKitty"+new Date(),true);
 		//readFile(filePath);
-		
-		
-		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Please input a:");
 		String inputStrA=sc.nextLine();
-		writeText(filePath,inputStrA+",TIME IS"+new Date(),true);
+		writeText(filePath,inputStrA+",TIME IS "+new Date(),true);
 		readFile(filePath);
 		
 	}
@@ -56,6 +62,7 @@ public class FileUtil {
 		if (file.isFile() && file.exists()) {
 			 InputStreamReader read;
 			try {
+				//BufferedReader->InputStreamReader->FileInputStream->File
 				read = new InputStreamReader(new FileInputStream(file),encoding);
 				 BufferedReader bufferedReader = new BufferedReader(read);
 		         String lineTxt = null;
@@ -86,6 +93,7 @@ public class FileUtil {
 		File file = new File(filePath);
 		try {
 			//指定编码格式，以免读取时中文字符异常
+			//BufferedWriter->OutputStreamWriter->FileOutputStream->File
 			fw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true), "UTF-8")); 
 			if(isNewLine){
 				fw.newLine();

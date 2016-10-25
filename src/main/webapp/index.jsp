@@ -29,3 +29,4 @@
 
 </body>
 </html>
+<%-- 当本项目成为一个SpringMVC项目后,启动项目,首页面不再是该页面,而应该到IndexController中指定 --%>
