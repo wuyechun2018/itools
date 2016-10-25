@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <%@ include file="../../inc.jsp"%>
 <title>Welcome</title>
 </head>
 <body>
 <h2>Welcome to itools!</h2>
+
+<div>
+<div><a href="${ctx }/views/easyui/index">GO TO EasyUi</a></div>
+<div><a href="${ctx }/views/echarts/index">GO TO ECHARTS</a></div>
+</div>
 </body>
 </html>
