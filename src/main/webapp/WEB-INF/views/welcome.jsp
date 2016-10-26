@@ -11,10 +11,11 @@
 <h2>Welcome to itools!</h2>
 
 <div>
-<div><a href="${ctx }/getJsonData">Get Json Data</a></div>
-<div><a href="${ctx }/getListJson">Get Json Data List</a></div>
-<div><a href="${ctx }/views/easyui/index">GO TO EasyUi</a></div>
-<div><a href="${ctx }/views/echarts/index">GO TO ECHARTS</a></div>
+<div><a href="${ctx }/getJsonData">Get Json Data(获取Json数据)</a></div>
+<div><a href="${ctx }/getListJson">Get Json Data List(获取List-Json数据)</a></div>
+<div><a href="${ctx }/views/easyui/index">GO TO EasyUi(演示EasyUI)</a></div>
+<div><a href="${ctx }/views/echarts/index">GO TO ECHARTS(演示ECHARTS)</a></div>
+<div><a href="${ctx }/downloadExcel">Export Excel use Poi(演示POI导出Excel)</a></div>
 </div>
 </body>
 </html>
