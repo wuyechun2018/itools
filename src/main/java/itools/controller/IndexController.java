@@ -1,13 +1,17 @@
 package itools.controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.Writer;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.streaming.SXSSFRow;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
@@ -16,6 +20,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
 import itools.model.User;
 import itools.utils.PoiUtil;
 import itools.utils.ToolsConstant;
@@ -141,7 +147,84 @@ public class IndexController {
 	}
 	
 	
+	/**
+	 * 
+	 * 文件上传
+	 * @author: wyc
+	 * @createTime: 2016年10月27日 上午9:10:36
+	 * @history:
+	 * @param file
+	 * @param request
+	 * @param response void
+	 */
+	@RequestMapping("/uploadFile")
+	public void uploadFile(MultipartFile uploadFile, HttpServletRequest request,HttpServletResponse response){
+		String fileName = uploadFile.getOriginalFilename();
+		String realPath = request.getSession().getServletContext().getRealPath("/updload/");
+		System.out.println(realPath);
+		File tarFile = new File(realPath, fileName);
+		if (!tarFile.exists()) {
+			tarFile.mkdirs();
+		}
+		try {
+			uploadFile.transferTo(tarFile);
+			writeMsg(response,true,fileName+"上传至："+realPath+File.separator+fileName);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
+	
+	
+	/**
+	 * 
+	 * 多文件上传
+	 * @author: wyc
+	 * @createTime: 2016年10月27日 上午9:10:36
+	 * @history:
+	 * @param file
+	 * @param request
+	 * @param response void
+	 * @throws IOException 
+	 */
+	@RequestMapping("/uploadMutiFile")
+	public void uploadMutiFile(MultipartFile[] uploadFiles, HttpServletRequest request,HttpServletResponse response) throws IOException{
+		for (MultipartFile uploadFile : uploadFiles) {
+			String fileName = uploadFile.getOriginalFilename();
+			String realPath = request.getSession().getServletContext().getRealPath("/updload/");
+			File tarFile = new File(realPath, fileName);
+			try {
+				uploadFile.transferTo(tarFile);
+				System.out.println(fileName+"上传至："+realPath+File.separator+fileName);
+			} catch (IllegalStateException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		writeMsg(response,true,"文件上传成功！");
+	}
+	
+	
+	/**
+	 * 
+	 * 输出
+	 * @author: wyc
+	 * @createTime: 2016年10月27日 上午9:12:07
+	 * @history:
+	 * @param response
+	 * @param flag
+	 * @param msg
+	 * @throws IOException void
+	 */
+	public static void writeMsg(HttpServletResponse response,boolean flag,String msg) throws IOException{
+		response.setContentType("text/html;charset=UTF-8");
+		Writer writer = response.getWriter();
+		writer.write("{\"success\": \""+flag+"\",\"msg\":\'"+msg+"\'}");
+	}
 	
 	
 	/**

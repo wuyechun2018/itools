@@ -17,6 +17,8 @@
 <div><a href="${ctx }/views/echarts/index">GO TO ECHARTS(演示ECHARTS)</a></div>
 <div><a href="${ctx }/downloadExcel">Export Excel use Poi(演示POI导出Excel)</a></div>
 <div><a href="${ctx }/views/jquery/index">Jquery(演示Jquery特效)</a></div>
+<div><a href="${ctx }/views/spring/upload">File Upload IN Spring(文件上传)</a></div>
+
 </div>
 </body>
 </html>
