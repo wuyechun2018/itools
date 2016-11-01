@@ -1,3 +1,17 @@
+Itools 适合Java初学者,演示了Java-web开发过程中的一些经典示例,它
+是一个Maven构建的项目,系统中需要安装配置Jdk和Maven。
+
+
+
+内容：
+1、包 package itools.utils
+1)DbUtil.java  使用JDBC连接数据库,并进行简单查询；
+
+
+
+
+
+
 版本：
 1、20161021-V0.1 Become a Maven web project;    
 2、20161022-V0.2 Become a SpringMVC project; 

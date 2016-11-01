@@ -9,6 +9,15 @@ import org.apache.poi.xssf.streaming.SXSSFCell;
 import org.apache.poi.xssf.streaming.SXSSFRow;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 
+/**
+ * 
+ * 
+ * @desc: POI工具类
+ * @author: wyc
+ * @createTime: 2016年11月1日 下午5:26:56
+ * @history:
+ * @version: v1.0
+ */
 public class PoiUtil {
 	
 	

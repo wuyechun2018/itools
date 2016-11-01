@@ -6,6 +6,15 @@ import itools.model.User;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+/**
+ * 
+ * 
+ * @desc: 使用Json-lib
+ * @author: wyc
+ * @createTime: 2016年11月1日 下午5:26:26
+ * @history:
+ * @version: v1.0
+ */
 public class JsonUtil {
 	
 	public static void main(String[]args){

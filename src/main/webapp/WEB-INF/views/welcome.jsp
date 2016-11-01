@@ -23,6 +23,14 @@ a:hover{
 text-decoration: underline;
 }
 
+.link-type{
+font-size:16px;
+font-weight: bold;
+margin-top: 18px;
+color:rgb(45,62,80);
+
+}
+
 
 </style>
 
@@ -31,13 +39,19 @@ text-decoration: underline;
 <h2>Welcome to itools!</h2>
 
 <div>
-<div>1、<a href="${ctx }/getJsonData">Get Json Data(获取Json数据)</a></div>
-<div>2、<a href="${ctx }/getListJson">Get Json Data List(获取List-Json数据)</a></div>
-<div>3、<a href="${ctx }/views/easyui/index">GO TO EasyUi(演示EasyUI)</a></div>
-<div>4、<a href="${ctx }/views/echarts/index">GO TO ECHARTS(演示ECHARTS)</a></div>
-<div>5、<a href="${ctx }/downloadExcel">Export Excel use Poi(演示POI导出Excel)</a></div>
-<div>6、<a href="${ctx }/views/jquery/index">Jquery(演示Jquery特效)</a></div>
-<div>7、<a href="${ctx }/views/spring/upload">File Upload IN Spring(文件上传)</a></div>
+<div class="link-type">JSON</div>
+<div>1、<a href="${ctx }/getJsonData">获取Json数据(Get Json Data)</a></div>
+<div>2、<a href="${ctx }/getListJson">获取List-Json数据(Get Json Data List)</a></div>
+<div class="link-type">EasyUI</div>
+<div>3、<a href="${ctx }/views/easyui/index">演示EasyUI(GO TO EasyUi)</a></div>
+<div class="link-type">EasyUI</div>
+<div>1、<a href="${ctx }/views/echarts/index">演示ECHARTS入门示例(GO TO ECHARTS)</a></div>
+<div>2、<a href="${ctx }/views/echarts/relation">演示ECHARTS关系图</a></div>
+<div class="link-type">POI</div>
+<div>5、<a href="${ctx }/downloadExcel">演示POI导出Excel(Export Excel use Poi)</a></div>
+<div>6、<a href="${ctx }/views/jquery/index">演示Jquery特效(Jquery)</a></div>
+<div class="link-type">文件上传、下载</div>
+<div>7、<a href="${ctx }/views/spring/upload">文件上传(File Upload IN Spring)</a></div>
 
 </div>
 </body>

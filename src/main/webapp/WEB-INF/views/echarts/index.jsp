@@ -37,7 +37,14 @@
         myChart.setOption(option);
     </script>
     
-    <a href="${ctx}/views/echarts/relation">关系图</a>
+    <a href="javascript:void(0)" onclick="history.go(-1)">返回</a>
+    
+    <%--
+    history.back(-1):直接返回当前页的上一页，数据全部消息，是个新页面
+    history.go(-1):也是返回当前页的上一页，不过表单里的数据全部还在
+    history.back(0) 刷新 history.back(1) 前进 history.back(-1) 后退
+    
+    --%>
 	
 </body>
 </html>

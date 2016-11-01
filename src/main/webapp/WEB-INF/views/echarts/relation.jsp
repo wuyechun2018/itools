@@ -86,6 +86,7 @@
                 series : [
                     {
                         name: 'Les Miserables',
+                        //类型
                         type: 'graph',
                         layout: 'none',
                         edgeSymbol: ['none', 'arrow'],
@@ -111,6 +112,12 @@
 
             myChart.setOption(option);
         }, 'xml');
+        
+       // $.get(URL,data,function(data,status,xhr),dataType)
+       //dataType 规定预期的服务器响应的数据类型
+
+        
+        
     </script>
 	
 	

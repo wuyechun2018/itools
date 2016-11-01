@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * 
- * HelloWorld 
+ * HelloWorld,控制台输入
  * @desc: The beginning of this tools
  * @author: wyc
  * @createTime: 2016年10月24日 上午8:51:10
