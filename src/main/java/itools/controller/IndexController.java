@@ -7,7 +7,9 @@ import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import itools.model.User;
+import itools.utils.FreeMarkerUtil;
 import itools.utils.PoiUtil;
 import itools.utils.ToolsConstant;
 
@@ -226,6 +229,23 @@ public class IndexController {
 		writer.write("{\"success\": \""+flag+"\",\"msg\":\'"+msg+"\'}");
 	}
 	
+	
+	/**
+	 * 
+	 * 获取用于Echarts展示的XML
+	 * @author: wyc
+	 * @createTime: 2016年10月27日 上午10:51:18
+	 * @history: void
+	 */
+	@RequestMapping(value="/getChartXML",produces = "plain/text; charset=UTF-8")
+	//@RequestMapping("/getChartXML")
+	@ResponseBody
+	public String getChartXML(HttpServletRequest request){
+		Map<String,Object> propMap=new HashMap<String, Object>();
+		String templateFileName="relation.ftl";
+		String xml=FreeMarkerUtil.getInstance().getStrByTemplate(request, templateFileName, propMap);
+		return xml;
+	}
 	
 	/**
 	 * 

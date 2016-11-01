@@ -36,6 +36,8 @@
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     </script>
+    
+    <a href="${ctx}/views/echarts/relation">关系图</a>
 	
 </body>
 </html>
