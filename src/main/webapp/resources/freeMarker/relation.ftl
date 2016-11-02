@@ -68,20 +68,24 @@
     </nodes>
     <edges>
       <edge id="1" source="2" target="0" weight="8.0">
-        <attvalues>0</attvalues>
+        <attvalues>1</attvalues>
+        <viz:color r="0" g="238" b="0"></viz:color>
       </edge>
       
       <edge id="2" source="0" target="1" weight="3.0">
         <attvalues>1</attvalues>
+        <viz:color r="0" g="238" b="0"></viz:color>
       </edge>
       
       
       <edge id="3" source="3" target="4" weight="8.0">
         <attvalues>0</attvalues>
+       <viz:color r="0" g="238" b="0"></viz:color>
       </edge>
       
       <edge id="4" source="4" target="5" weight="3.0">
         <attvalues>1</attvalues>
+        <viz:color r="0" g="238" b="0"></viz:color>
       </edge>
        
       
