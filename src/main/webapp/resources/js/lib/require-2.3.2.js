@@ -2146,7 +2146,8 @@ var requirejs, require, define;
 var requireConfig = {
 	    baseUrl: CONTEXTPATH + "/resources/js/",
 		paths: {
-			jquery: './lib/jquery/jquery-1.9.1'
+			jquery: './lib/jquery/jquery-1.9.1',
+			zrender:'./lib/zrender/js/src'
 		},
 		shim: {
 			
