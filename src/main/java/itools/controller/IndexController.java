@@ -18,6 +18,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.streaming.SXSSFRow;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,7 @@ import itools.model.User;
 import itools.utils.FreeMarkerUtil;
 import itools.utils.PoiUtil;
 import itools.utils.ToolsConstant;
+import itools.service.UserService;
 
 /**
  * 
@@ -40,6 +42,12 @@ import itools.utils.ToolsConstant;
  */
 @Controller
 public class IndexController {
+	
+	@Autowired
+	private UserService userService;
+	
+	
+	
 	
 	/**
 	 * 
@@ -246,6 +254,25 @@ public class IndexController {
 		String xml=FreeMarkerUtil.getInstance().getStrByTemplate(request, templateFileName, propMap);
 		return xml;
 	}
+	
+	
+	/**
+	 * 
+	 * 从数据库中获取数据
+	 * @author: wyc
+	 * @createTime: 2016年11月10日 上午10:45:47
+	 * @history:
+	 * @param request
+	 * @return String
+	 */
+	@RequestMapping(value="/getDataFromDb")
+	@ResponseBody
+	public Object getDataFromDb(HttpServletRequest request){
+		List<User> list=userService.list();
+		return list;
+	}
+	
+	
 	
 	/**
 	 * 

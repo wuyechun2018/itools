@@ -401,6 +401,35 @@ color:#3c763d;
                             	   
                                }
                                ],
+                        markLine:{
+                        	effect: {
+                                show: true,
+                                period: 30,
+                                color: '#f6f',
+                                symbolSize: 30
+                            },
+                        		data:[
+                        		      
+                        		      
+                        		    
+                        		      
+                        		      [
+                        		        {
+                        		            name: '两个坐标之间的标线',
+                        		            coord: [0, 0]
+                        		        },
+                        		        {
+                        		            coord: [0, -10]
+                        		        }
+                        		    ]
+                        		      
+                        		      
+                        		      
+                        		      ]
+   
+                        	}
+                                  
+                                  ,
                         links: [{
                         		id:'1',
                         		name:'',
@@ -432,8 +461,8 @@ color:#3c763d;
                                      show: true,
                                      period: 6,
                                      trailLength: 0.7,
-                                     color: '#fff',
-                                     symbolSize: 3
+                                     color: '#333',
+                                     symbolSize: 30
                                  },
                                  lineStyle: {
                                      normal: {
