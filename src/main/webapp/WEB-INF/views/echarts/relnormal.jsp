@@ -7,7 +7,6 @@
 <style type="text/css">
 .zc{
 color:green;
-/* text-align: center; */
 }
 
 .yc{
@@ -26,7 +25,7 @@ background-color:#C7C7C7;
 
 .info-title{
 	margin:0px 0px 8px 5px;
-	color:#FFB90F;
+	color:#FFF;
 	font-size:16px;
 	font-weight: bold;
 }
@@ -43,7 +42,7 @@ float:left;
 }
 
 .info{
-background-color:#FFF8DC;
+background-color:#000;
 margin-right:10px;
 float:right;
 }
@@ -52,6 +51,24 @@ float:right;
 font-size:14px;
 font-weight: bold;
 
+}
+
+.info td {
+background-color: black;
+color:#FFF;
+}
+
+.info th {
+background-color: black;
+color:#FFF;
+}
+
+.jd{
+color:#991129;
+}
+
+.zt{
+color:#3c763d;
 }
 
 
@@ -74,26 +91,55 @@ font-weight: bold;
 <link rel="stylesheet" href="${ctx}/resources/js/lib/bootstrap-multiselect/css/bootstrap-multiselect.css">
 <script type="text/javascript" src="${ctx}/resources/js/lib/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
 
-<%-- <script type="text/javascript" src="${ctx}/resources/js/lib/require-2.3.2.js"></script>
- --%>
+
+<script type="text/javascript">
+	$(function(){
+		$(".zt").hide();
+		$("#disp-type-select").change(function(){
+			var selVal=$("#disp-type-select").val();
+			if(selVal==1){
+				$(".jd").show();
+				$(".zt").hide();
+			}else{
+				$(".zt").show();
+				$(".jd").hide();
+			}
+			
+			
+		});
+		
+		
+	})
+
+
+</script>
+
+
 
 </head>
 <body class="img-bg">
 
 	
 
-	<div style="margin:5px;padding: 4px;" class="panel panel-default">
-		<span class="title-span" style="margin-left:10px;">源数据库：</span>
-		<select id="example-getting-started" >
+	<div style="margin:5px;padding: 8px;" class="panel panel-default">
+	
+		<span class="title-span" style="margin-left:10px;">展示类型：</span>
+		<select id="disp-type-select" >
+		    <option value="1">节点</option>
+		    <option value="2">专题</option>
+		</select>
+	
+		<span  class="title-span jd" style="margin-left:10px;">源数据库：</span>
+		<select id="example-getting-started" class="jd">
 			<option value="0">请选择</option>
 		    <option value="1">市公安局</option>
 		    <option value="2">汇集库</option>
 		    <option value="3">网格平台</option>
 		    <option value="4">规整库</option>
 		</select>
-		<span>~</span>
-		<span class="title-span">目标数据库：</span>
-		<select id="example-getting-end" >
+		<span class="jd">~</span>
+		<span class="title-span jd">目标数据库：</span>
+		<select id="example-getting-end" class="jd">
 			<option value="0">请选择</option>
 		    <option value="1">市公安局</option>
 		    <option value="2">汇集库</option>
@@ -101,8 +147,8 @@ font-weight: bold;
 		    <option value="4">规整库</option>
 		</select>
 		
-		<span class="title-span" style="margin-left: 20px;">数据专题：</span>
-		<select id="sel-zt" >
+		<span class="title-span zt" style="margin-left: 20px;">数据专题：</span>
+		<select id="sel-zt " class="zt">
 			<option value="0">请选择</option>
 		    <option value="1">人房数据迁移</option>
 		    <option value="2">电子监察数据迁移</option>
@@ -110,52 +156,6 @@ font-weight: bold;
 		
 	</div>
 	
-	
-	
-	
-	<script type="text/javascript">
-		$(function(){
-			/*  $('#example-getting-started').multiselect({
-				 numberDisplayed: 10,
-				 nonSelectedText:'请选择数据库',
-				 allSelectedText:'已选择'
-			 });
-			 
-			 $('#example-getting-end').multiselect({
-				 numberDisplayed: 10,
-				 nonSelectedText:'请选择数据库',
-				 allSelectedText:'已选择'
-			 });
-			 
-			 $('#sel-zt').multiselect({
-				 numberDisplayed: 10,
-				 nonSelectedText:'请选择数据库',
-				 allSelectedText:'已选择'
-			 }); */
-			 
-			 
-			 
-			 
-			 
-			 /* require.config(requireConfig);
-			 define(['zrender'
-			     ],
-			     function(zrender) {
-				 var zr = zrender.init(document.getElementById('main'));
-				 
-			 }) */
-			 
-			 
-			 
-			
-		})
-	
-	
-	
-	</script>
-	
-	
-	 
 
  	<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
     <div class="chart" id="main" style="width: 900px;height:560px;margin-top: 30px;"></div>
@@ -737,10 +737,6 @@ font-weight: bold;
 	            	
             	
             	}else{
-            		
-            		//alert($('#example-getting-started').val());
-	            	//alert("type:"+params.dataType+" id:"+params.data.id+"  name:"+params.name);
-	            	//alert($('#box').html());
 	            	var tableHtml;
 	            	if(params.data.id==1){
 	            		tableHtml=gaHtml;
@@ -764,11 +760,6 @@ font-weight: bold;
 	            	
             	}
         	});
-            
-            
-            
-            
-            
             
         }, 'xml');
         
