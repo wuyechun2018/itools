@@ -90,6 +90,8 @@ color:#3c763d;
 
 <link rel="stylesheet" href="${ctx}/resources/js/lib/bootstrap-multiselect/css/bootstrap-multiselect.css">
 <script type="text/javascript" src="${ctx}/resources/js/lib/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+ <script type="text/javascript" src="${ctx}/resources/js/lib/require-2.3.2.js"></script>
+<script type="text/javascript" src="${ctx}/resources/js/lib/zrender/js/zrender.js"></script> 
 
 
 <script type="text/javascript">
@@ -396,7 +398,7 @@ color:#3c763d;
                                    },
                                    tooltip:{
                                 	   show: true,
-                                	   formatter:'IP:59.203.153.116  Oracle'
+                                	   formatter:'IP:172.16.9.107:21521  Oracle'
                                    }
                             	   
                                }
@@ -735,6 +737,17 @@ color:#3c763d;
     	            	        }
     	            	    }
     	            	})
+            		}else if(params.data.id==1){
+            			bootbox.dialog({
+    	            		title:'详细信息',
+    	            	    message: '规整库更新数据7亿9687万条，规整数量9亿644万条次',
+    	            	    buttons: {
+    	            	        confirm: {
+    	            	            label: '关闭',
+    	            	            className: 'btn-success'
+    	            	        }
+    	            	    }
+    	            	})
             		}
 	            	
             	
@@ -762,6 +775,132 @@ color:#3c763d;
 	            	
             	}
         	});
+            
+            
+            var _ZR = myChart.getZr();
+            // 补充千层饼
+            
+            var icon0 = new echarts.graphic.Circle({
+                shape: { r: 20 },
+                style: {
+                    text: '<',
+                    fill: '#eee'
+                },
+                position: [50, 100]
+            });
+            
+            var icon1 = new echarts.graphic.Circle({
+                shape: { r: 20 },
+                style: {
+                    text: '<',
+                    fill: '#eee'
+                },
+                position: [150, 100]
+            });
+            
+            
+           /*  _ZR.animate(icon0.id)
+            .when(1000, {
+                position : [100, 100]
+            })
+            .when(2000, {
+                rotation : [Math.PI*2, 0, 0]
+            })
+            .start(); */
+            
+            
+            
+          // var animator = new Animator(icon0, true);
+          // _ZR.animation.addAnimator(animator); 
+           
+            
+           /*  var group = new echarts.graphic.Group();
+            group.add(icon0);
+            group.add(icon1);
+            _ZR.add(group);
+            //icon0.animate('', true); 
+            
+             _ZR.animation.addAnimator(animation); 
+            
+              _ZR.animation.animate(icon0.id)
+              .when(100, {
+                  x: 0,
+                  y: 10
+              })
+              .when(200, {
+                  x: 100,
+                  y: 100
+              })
+              .start('spline'); */
+      
+            
+       /*        require(
+            		    [	"zrender",
+            				'zrender/animation/Animation',
+            				"zrender/tool/color"],
+   			function(Animation) {    
+	         var animation = new Animation();
+	            var obj = {
+	                x: 100,
+	                y: 100
+	            };
+            animation.animate(node.position)
+                .when(1000, {
+                    x: 500,
+                    y: 500
+                })
+                .when(2000, {
+                    x: 100,
+                    y: 100
+                })
+                .start('spline');
+            
+            _ZR.animation.addAnimator(animation); 
+      }) */
+            
+      
+      
+            
+            
+           /*  _ZR.animate(icon0.id)
+            .when(1000, {
+                position : [100, 100]
+            })
+            .when(2000, {
+                rotation : [Math.PI*2, 0, 0]
+            })
+            .start(); */
+          
+            
+            
+            require(
+        		    [	"zrender",
+        				'zrender/animation/Animation',
+        				"zrender/tool/color"],
+			function(Animation) {    
+	         var animation = new Animation();
+	            var obj = {
+	                x: 100,
+	                y: 100
+	            };
+	        animation.animate(node.position)
+	            .when(1000, {
+	                x: 500,
+	                y: 500
+	            })
+	            .when(2000, {
+	                x: 100,
+	                y: 100
+	            })
+	            .start('spline');
+	        
+	        _ZR.animation.addAnimator(animation); 
+        })
+            
+            
+            
+            
+            
             
         }, 'xml');
         

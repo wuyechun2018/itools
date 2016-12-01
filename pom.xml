@@ -167,7 +167,22 @@
 			<artifactId>freemarker</artifactId>
 			<version>2.3.23</version>
 		</dependency>
-
+		
+		<!-- Spring JdbcTemplate  -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<!-- 连接池 pool-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>0.2.6</version>
+		</dependency>
+		
+		
 	</dependencies>
 	<build>
 		<finalName>itools</finalName>
